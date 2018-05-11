@@ -9,6 +9,12 @@
 import UIKit
 
 class ViewController: UIViewController {
+    @IBOutlet var numberButtons: [UIButton]!
+    @IBOutlet weak var clearButton: UIButton!
+    @IBOutlet weak var enterButton: UIButton!
+    @IBOutlet weak var amountLabel: UILabel!
+    @IBOutlet weak var countLabel: UILabel!
+    @IBOutlet weak var stepper: UIStepper!
 
     override func viewDidLoad() {
         super.viewDidLoad()
