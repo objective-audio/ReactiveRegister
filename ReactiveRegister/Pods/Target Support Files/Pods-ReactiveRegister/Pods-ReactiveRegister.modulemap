@@ -1,0 +1,6 @@
+framework module Pods_ReactiveRegister {
+  umbrella header "Pods-ReactiveRegister-umbrella.h"
+
+  export *
+  module * { export * }
+}

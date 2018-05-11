@@ -13,6 +13,8 @@
 		1A3E260620A59D2000FFCBBF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A3E260520A59D2000FFCBBF /* Assets.xcassets */; };
 		1A3E260920A59D2000FFCBBF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A3E260720A59D2000FFCBBF /* LaunchScreen.storyboard */; };
 		1A3E261420A59D2000FFCBBF /* ReactiveRegisterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3E261320A59D2000FFCBBF /* ReactiveRegisterTests.swift */; };
+		5F210F94C95B1560A650CAF8 /* Pods_ReactiveRegister.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F4E59F081953F8BFE8E36A8 /* Pods_ReactiveRegister.framework */; };
+		AA84F1CE9050EC01BDB9060B /* Pods_ReactiveRegisterTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05C39A7A01596C098742F78B /* Pods_ReactiveRegisterTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -26,6 +28,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		05C39A7A01596C098742F78B /* Pods_ReactiveRegisterTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ReactiveRegisterTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		10DF02AF3495F018BE199E7F /* Pods-ReactiveRegisterTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReactiveRegisterTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ReactiveRegisterTests/Pods-ReactiveRegisterTests.release.xcconfig"; sourceTree = "<group>"; };
+		19616231A00EF016C230FC21 /* Pods-ReactiveRegister.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReactiveRegister.release.xcconfig"; path = "Pods/Target Support Files/Pods-ReactiveRegister/Pods-ReactiveRegister.release.xcconfig"; sourceTree = "<group>"; };
 		1A3E25FB20A59D1E00FFCBBF /* ReactiveRegister.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReactiveRegister.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A3E25FE20A59D1F00FFCBBF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1A3E260020A59D1F00FFCBBF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -36,6 +41,9 @@
 		1A3E260F20A59D2000FFCBBF /* ReactiveRegisterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReactiveRegisterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A3E261320A59D2000FFCBBF /* ReactiveRegisterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReactiveRegisterTests.swift; sourceTree = "<group>"; };
 		1A3E261520A59D2000FFCBBF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2B294276B954A0B467960AF5 /* Pods-ReactiveRegister.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReactiveRegister.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ReactiveRegister/Pods-ReactiveRegister.debug.xcconfig"; sourceTree = "<group>"; };
+		3F4E59F081953F8BFE8E36A8 /* Pods_ReactiveRegister.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ReactiveRegister.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B0A9FA2565DE3BDF7DA5E8EF /* Pods-ReactiveRegisterTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReactiveRegisterTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ReactiveRegisterTests/Pods-ReactiveRegisterTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5F210F94C95B1560A650CAF8 /* Pods_ReactiveRegister.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -50,18 +59,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA84F1CE9050EC01BDB9060B /* Pods_ReactiveRegisterTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0EE8305E229BF390F589F7CA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3F4E59F081953F8BFE8E36A8 /* Pods_ReactiveRegister.framework */,
+				05C39A7A01596C098742F78B /* Pods_ReactiveRegisterTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		1A3E25F220A59D1E00FFCBBF = {
 			isa = PBXGroup;
 			children = (
 				1A3E25FD20A59D1E00FFCBBF /* ReactiveRegister */,
 				1A3E261220A59D2000FFCBBF /* ReactiveRegisterTests */,
 				1A3E25FC20A59D1E00FFCBBF /* Products */,
+				A5555BE98EBA2FF1BF2483EF /* Pods */,
+				0EE8305E229BF390F589F7CA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -96,6 +117,17 @@
 			path = ReactiveRegisterTests;
 			sourceTree = "<group>";
 		};
+		A5555BE98EBA2FF1BF2483EF /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2B294276B954A0B467960AF5 /* Pods-ReactiveRegister.debug.xcconfig */,
+				19616231A00EF016C230FC21 /* Pods-ReactiveRegister.release.xcconfig */,
+				B0A9FA2565DE3BDF7DA5E8EF /* Pods-ReactiveRegisterTests.debug.xcconfig */,
+				10DF02AF3495F018BE199E7F /* Pods-ReactiveRegisterTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -103,9 +135,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1A3E261820A59D2000FFCBBF /* Build configuration list for PBXNativeTarget "ReactiveRegister" */;
 			buildPhases = (
+				8B9F80C93BC8A57C79D342F3 /* [CP] Check Pods Manifest.lock */,
 				1A3E25F720A59D1E00FFCBBF /* Sources */,
 				1A3E25F820A59D1E00FFCBBF /* Frameworks */,
 				1A3E25F920A59D1E00FFCBBF /* Resources */,
+				E425CF28AA0FA3285FA78DFD /* [CP] Embed Pods Frameworks */,
+				BA51FD20E6425C82389F06F1 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -120,9 +155,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1A3E261B20A59D2000FFCBBF /* Build configuration list for PBXNativeTarget "ReactiveRegisterTests" */;
 			buildPhases = (
+				F57B30CE68218562A7E7965D /* [CP] Check Pods Manifest.lock */,
 				1A3E260B20A59D2000FFCBBF /* Sources */,
 				1A3E260C20A59D2000FFCBBF /* Frameworks */,
 				1A3E260D20A59D2000FFCBBF /* Resources */,
+				851790A75569EC339A31D4B0 /* [CP] Embed Pods Frameworks */,
+				69ADB73F4E3F23BD4B6EAC63 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -191,6 +229,108 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		69ADB73F4E3F23BD4B6EAC63 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ReactiveRegisterTests/Pods-ReactiveRegisterTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		851790A75569EC339A31D4B0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ReactiveRegisterTests/Pods-ReactiveRegisterTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8B9F80C93BC8A57C79D342F3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ReactiveRegister-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BA51FD20E6425C82389F06F1 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ReactiveRegister/Pods-ReactiveRegister-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E425CF28AA0FA3285FA78DFD /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-ReactiveRegister/Pods-ReactiveRegister-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ReactiveRegister/Pods-ReactiveRegister-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F57B30CE68218562A7E7965D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ReactiveRegisterTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		1A3E25F720A59D1E00FFCBBF /* Sources */ = {
@@ -356,14 +496,12 @@
 		};
 		1A3E261920A59D2000FFCBBF /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2B294276B954A0B467960AF5 /* Pods-ReactiveRegister.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = ReactiveRegister/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "jp.objective-audio.ReactiveRegister";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -373,14 +511,12 @@
 		};
 		1A3E261A20A59D2000FFCBBF /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 19616231A00EF016C230FC21 /* Pods-ReactiveRegister.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = ReactiveRegister/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "jp.objective-audio.ReactiveRegister";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -390,16 +526,13 @@
 		};
 		1A3E261C20A59D2000FFCBBF /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B0A9FA2565DE3BDF7DA5E8EF /* Pods-ReactiveRegisterTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = ReactiveRegisterTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "jp.objective-audio.ReactiveRegisterTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -410,16 +543,13 @@
 		};
 		1A3E261D20A59D2000FFCBBF /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 10DF02AF3495F018BE199E7F /* Pods-ReactiveRegisterTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = ReactiveRegisterTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "jp.objective-audio.ReactiveRegisterTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
