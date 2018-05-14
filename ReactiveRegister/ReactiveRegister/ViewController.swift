@@ -21,7 +21,7 @@ class ViewController: UIViewController {
     let register: Register = AppController.shared.register
     var numberPad: NumberPad { return self.register.numberPad }
     let disposeBag = DisposeBag()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
