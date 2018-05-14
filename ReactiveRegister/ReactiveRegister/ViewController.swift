@@ -28,10 +28,10 @@ class ViewController: UIViewController {
         self.register.numberPad.amount.asObservable().map { "\($0)" }.bind(to: self.amountLabel.rx.text).disposed(by: self.disposeBag)
         
         for idx in 0..<10 {
-            self.numberButtons[idx].rx.tap.map { NumberPad.Command.number(idx) }.bind(to: self.numberPad.input).disposed(by: self.disposeBag)
+            self.numberButtons[idx].rx.tap.asSignal().map { NumberPad.Command.number(idx) }.emit(to: self.numberPad.input).disposed(by: self.disposeBag)
         }
         
-        self.clearButton.rx.tap.map { NumberPad.Command.clear }.bind(to: self.numberPad.input).disposed(by: self.disposeBag)
+        self.clearButton.rx.tap.asSignal().map { NumberPad.Command.clear }.emit(to: self.numberPad.input).disposed(by: self.disposeBag)
     }
 }
 
