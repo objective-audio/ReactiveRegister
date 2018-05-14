@@ -11,4 +11,12 @@ import Foundation
 class Checkout {
     let menu = Menu()
     var count: Int = 1
+    
+    var total: NSDecimalNumber {
+        return .zero
+    }
+    
+    var tax: NSDecimalNumber {
+        return .zero
+    }
 }
