@@ -7,15 +7,10 @@
 //
 
 import Foundation
+import RxSwift
 
 class NumberPad {
-    private(set) var amount = NSDecimalNumber.zero {
-        didSet {
-            if self.amount != oldValue, let handler = self.amountHandler {
-                handler(self.amount)
-            }
-        }
-    }
+    var amount = Variable<NSDecimalNumber>(.zero)
     
     var amountHandler:((NSDecimalNumber) -> Void)?
     
@@ -38,9 +33,9 @@ class NumberPad {
     private func updateAmount() {
         let value = NSDecimalNumber(string: self.input)
         if value == .notANumber {
-            self.amount = .zero
+            self.amount.value = .zero
         } else {
-            self.amount = value
+            self.amount.value = value
         }
     }
 }

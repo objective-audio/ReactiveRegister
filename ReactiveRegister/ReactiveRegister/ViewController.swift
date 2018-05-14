@@ -19,15 +19,12 @@ class ViewController: UIViewController {
     @IBOutlet weak var stepper: UIStepper!
     
     let register: Register = AppController.shared.register
+    let disposeBag = DisposeBag()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.register.numberPad.amountHandler = { [weak self] amount in
-            self?.amountLabel.text = "\(amount)"
-        }
-        
-        self.amountLabel.text = "\(self.register.numberPad.amount)"
+        self.register.numberPad.amount.asObservable().map { "\($0)" }.bind(to: self.amountLabel.rx.text).disposed(by: self.disposeBag)
     }
 
     @IBAction func inputNumber(sender: UIButton) {
