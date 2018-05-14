@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 class ViewController: UIViewController {
     @IBOutlet var numberButtons: [UIButton]!
@@ -15,17 +17,25 @@ class ViewController: UIViewController {
     @IBOutlet weak var amountLabel: UILabel!
     @IBOutlet weak var countLabel: UILabel!
     @IBOutlet weak var stepper: UIStepper!
+    
+    let register: Register = AppController.shared.register
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        self.register.numberPad.amountHandler = { [weak self] amount in
+            self?.amountLabel.text = "\(amount)"
+        }
+        
+        self.amountLabel.text = "\(self.register.numberPad.amount)"
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    @IBAction func inputNumber(sender: UIButton) {
+        self.register.numberPad.input(number: sender.tag)
     }
-
-
+    
+    @IBAction func clear(sender: UIButton) {
+        self.register.numberPad.clear()
+    }
 }
 

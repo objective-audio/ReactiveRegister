@@ -13,6 +13,9 @@
 		1A3E260620A59D2000FFCBBF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A3E260520A59D2000FFCBBF /* Assets.xcassets */; };
 		1A3E260920A59D2000FFCBBF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A3E260720A59D2000FFCBBF /* LaunchScreen.storyboard */; };
 		1A3E261420A59D2000FFCBBF /* ReactiveRegisterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3E261320A59D2000FFCBBF /* ReactiveRegisterTests.swift */; };
+		1A69539A20A9386D0078731D /* NumberPad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A69539920A9386D0078731D /* NumberPad.swift */; };
+		1A69539C20A93D380078731D /* Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A69539B20A93D380078731D /* Register.swift */; };
+		1A69539E20A93D5E0078731D /* AppController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A69539D20A93D5E0078731D /* AppController.swift */; };
 		5F210F94C95B1560A650CAF8 /* Pods_ReactiveRegister.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F4E59F081953F8BFE8E36A8 /* Pods_ReactiveRegister.framework */; };
 		AA84F1CE9050EC01BDB9060B /* Pods_ReactiveRegisterTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05C39A7A01596C098742F78B /* Pods_ReactiveRegisterTests.framework */; };
 /* End PBXBuildFile section */
@@ -41,6 +44,9 @@
 		1A3E260F20A59D2000FFCBBF /* ReactiveRegisterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReactiveRegisterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A3E261320A59D2000FFCBBF /* ReactiveRegisterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReactiveRegisterTests.swift; sourceTree = "<group>"; };
 		1A3E261520A59D2000FFCBBF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1A69539920A9386D0078731D /* NumberPad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberPad.swift; sourceTree = "<group>"; };
+		1A69539B20A93D380078731D /* Register.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Register.swift; sourceTree = "<group>"; };
+		1A69539D20A93D5E0078731D /* AppController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppController.swift; sourceTree = "<group>"; };
 		2B294276B954A0B467960AF5 /* Pods-ReactiveRegister.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReactiveRegister.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ReactiveRegister/Pods-ReactiveRegister.debug.xcconfig"; sourceTree = "<group>"; };
 		3F4E59F081953F8BFE8E36A8 /* Pods_ReactiveRegister.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ReactiveRegister.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0A9FA2565DE3BDF7DA5E8EF /* Pods-ReactiveRegisterTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReactiveRegisterTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ReactiveRegisterTests/Pods-ReactiveRegisterTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -100,6 +106,9 @@
 			children = (
 				1A3E25FE20A59D1F00FFCBBF /* AppDelegate.swift */,
 				1A3E260020A59D1F00FFCBBF /* ViewController.swift */,
+				1A69539D20A93D5E0078731D /* AppController.swift */,
+				1A69539B20A93D380078731D /* Register.swift */,
+				1A69539920A9386D0078731D /* NumberPad.swift */,
 				1A3E260220A59D1F00FFCBBF /* Main.storyboard */,
 				1A3E260520A59D2000FFCBBF /* Assets.xcassets */,
 				1A3E260720A59D2000FFCBBF /* LaunchScreen.storyboard */,
@@ -340,7 +349,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				1A3E260120A59D1F00FFCBBF /* ViewController.swift in Sources */,
+				1A69539E20A93D5E0078731D /* AppController.swift in Sources */,
 				1A3E25FF20A59D1F00FFCBBF /* AppDelegate.swift in Sources */,
+				1A69539C20A93D380078731D /* Register.swift in Sources */,
+				1A69539A20A9386D0078731D /* NumberPad.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -503,7 +515,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = ReactiveRegister/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "jp.objective-audio.ReactiveRegister";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -518,7 +533,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = ReactiveRegister/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "jp.objective-audio.ReactiveRegister";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -534,7 +552,11 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = ReactiveRegisterTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "jp.objective-audio.ReactiveRegisterTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -551,7 +573,11 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = ReactiveRegisterTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "jp.objective-audio.ReactiveRegisterTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
