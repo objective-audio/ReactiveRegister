@@ -8,11 +8,15 @@
 
 import Foundation
 import RxSwift
+import RxCocoa
 
 class NumberPad {
-    var amount = Variable<NSDecimalNumber>(.zero)
+    enum Command {
+        case number(Int)
+        case clear
+    }
     
-    var amountHandler:((NSDecimalNumber) -> Void)?
+    var amount = BehaviorRelay<NSDecimalNumber>(value: .zero)
     
     private var input: String = "" {
         didSet {
@@ -22,20 +26,21 @@ class NumberPad {
         }
     }
     
-    func input(number: Int) {
-        self.input = self.input + "\(number)"
-    }
-    
-    func clear() {
-        self.input = ""
+    func input(_ command: Command) {
+        switch command {
+        case .number(let number):
+            self.input = self.input + "\(number)"
+        case .clear:
+            self.input = ""
+        }
     }
     
     private func updateAmount() {
         let value = NSDecimalNumber(string: self.input)
         if value == .notANumber {
-            self.amount.value = .zero
+            self.amount.accept(.zero)
         } else {
-            self.amount.value = value
+            self.amount.accept(value)
         }
     }
 }

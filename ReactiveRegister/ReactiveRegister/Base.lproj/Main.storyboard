@@ -42,23 +42,14 @@
                                             <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="091-Pa-NHo">
                                                 <rect key="frame" x="0.0" y="0.0" width="118.33333333333333" height="104.66666666666667"/>
                                                 <state key="normal" title="7"/>
-                                                <connections>
-                                                    <action selector="inputNumberWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DVA-w7-GP1"/>
-                                                </connections>
                                             </button>
                                             <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="97M-O9-ap2">
                                                 <rect key="frame" x="128.33333333333334" y="0.0" width="118.33333333333334" height="104.66666666666667"/>
                                                 <state key="normal" title="8"/>
-                                                <connections>
-                                                    <action selector="inputNumberWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Rt3-XL-Mdu"/>
-                                                </connections>
                                             </button>
                                             <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IGS-5T-LZa">
                                                 <rect key="frame" x="256.66666666666669" y="0.0" width="118.33333333333331" height="104.66666666666667"/>
                                                 <state key="normal" title="9"/>
-                                                <connections>
-                                                    <action selector="inputNumberWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XIu-Al-Kfr"/>
-                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -68,23 +59,14 @@
                                             <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GUj-zY-eOg">
                                                 <rect key="frame" x="0.0" y="0.0" width="118.33333333333333" height="105"/>
                                                 <state key="normal" title="4"/>
-                                                <connections>
-                                                    <action selector="inputNumberWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VGo-sV-B6m"/>
-                                                </connections>
                                             </button>
                                             <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a2n-Tg-pI1">
                                                 <rect key="frame" x="128.33333333333334" y="0.0" width="118.33333333333334" height="105"/>
                                                 <state key="normal" title="5"/>
-                                                <connections>
-                                                    <action selector="inputNumberWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QXl-DW-L35"/>
-                                                </connections>
                                             </button>
                                             <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="goK-PX-bdq">
                                                 <rect key="frame" x="256.66666666666669" y="0.0" width="118.33333333333331" height="105"/>
                                                 <state key="normal" title="6"/>
-                                                <connections>
-                                                    <action selector="inputNumberWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="U2Y-8x-ok4"/>
-                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -94,23 +76,14 @@
                                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LAS-mo-5SQ">
                                                 <rect key="frame" x="0.0" y="0.0" width="118.33333333333333" height="104.66666666666667"/>
                                                 <state key="normal" title="1"/>
-                                                <connections>
-                                                    <action selector="inputNumberWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="I7z-Yk-hlh"/>
-                                                </connections>
                                             </button>
                                             <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r5N-7f-qHE">
                                                 <rect key="frame" x="128.33333333333334" y="0.0" width="118.33333333333334" height="104.66666666666667"/>
                                                 <state key="normal" title="2"/>
-                                                <connections>
-                                                    <action selector="inputNumberWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ft5-Iu-iTp"/>
-                                                </connections>
                                             </button>
                                             <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6E8-eQ-9zx">
                                                 <rect key="frame" x="256.66666666666669" y="0.0" width="118.33333333333331" height="104.66666666666667"/>
                                                 <state key="normal" title="3"/>
-                                                <connections>
-                                                    <action selector="inputNumberWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KMp-Hb-nOA"/>
-                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -120,16 +93,10 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fTT-1V-R6I">
                                                 <rect key="frame" x="0.0" y="0.0" width="118.33333333333333" height="105"/>
                                                 <state key="normal" title="0"/>
-                                                <connections>
-                                                    <action selector="inputNumberWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Xuj-nC-EF8"/>
-                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nwD-NG-Z2Y">
                                                 <rect key="frame" x="128.33333333333334" y="0.0" width="118.33333333333334" height="105"/>
                                                 <state key="normal" title="Clear"/>
-                                                <connections>
-                                                    <action selector="clearWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="T7P-Fx-2HG"/>
-                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PDt-b9-6jw">
                                                 <rect key="frame" x="256.66666666666669" y="0.0" width="118.33333333333331" height="105"/>
