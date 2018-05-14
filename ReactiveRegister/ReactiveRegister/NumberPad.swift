@@ -17,30 +17,28 @@ class NumberPad {
     }
     
     var amount = BehaviorRelay<NSDecimalNumber>(value: .zero)
+    var input = PublishRelay<Command>()
     
-    private var input: String = "" {
-        didSet {
-            if self.input != oldValue {
-                self.updateAmount()
+    let disposeBag = DisposeBag()
+    
+    init() {
+        var inputString: String = ""
+        
+        self.input.asObservable().map { command in
+            switch command {
+            case .number(let number):
+                inputString = inputString + "\(number)"
+            case .clear:
+                inputString = ""
             }
-        }
-    }
-    
-    func input(_ command: Command) {
-        switch command {
-        case .number(let number):
-            self.input = self.input + "\(number)"
-        case .clear:
-            self.input = ""
-        }
-    }
-    
-    private func updateAmount() {
-        let value = NSDecimalNumber(string: self.input)
-        if value == .notANumber {
-            self.amount.accept(.zero)
-        } else {
-            self.amount.accept(value)
-        }
+            
+            let value = NSDecimalNumber(string: inputString)
+            
+            if value == .notANumber {
+                return .zero
+            } else {
+                return value
+            }
+            }.bind(to: self.amount).disposed(by: self.disposeBag)
     }
 }
