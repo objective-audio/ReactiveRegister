@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1A0CE79D20A9944000F3F92A /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0CE79C20A9944000F3F92A /* Menu.swift */; };
+		1A0CE79F20A994E500F3F92A /* Checkout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0CE79E20A994E500F3F92A /* Checkout.swift */; };
 		1A3E25FF20A59D1F00FFCBBF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3E25FE20A59D1F00FFCBBF /* AppDelegate.swift */; };
 		1A3E260120A59D1F00FFCBBF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3E260020A59D1F00FFCBBF /* ViewController.swift */; };
 		1A3E260420A59D1F00FFCBBF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A3E260220A59D1F00FFCBBF /* Main.storyboard */; };
@@ -36,6 +37,7 @@
 		10DF02AF3495F018BE199E7F /* Pods-ReactiveRegisterTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReactiveRegisterTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ReactiveRegisterTests/Pods-ReactiveRegisterTests.release.xcconfig"; sourceTree = "<group>"; };
 		19616231A00EF016C230FC21 /* Pods-ReactiveRegister.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReactiveRegister.release.xcconfig"; path = "Pods/Target Support Files/Pods-ReactiveRegister/Pods-ReactiveRegister.release.xcconfig"; sourceTree = "<group>"; };
 		1A0CE79C20A9944000F3F92A /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
+		1A0CE79E20A994E500F3F92A /* Checkout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Checkout.swift; sourceTree = "<group>"; };
 		1A3E25FB20A59D1E00FFCBBF /* ReactiveRegister.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReactiveRegister.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A3E25FE20A59D1F00FFCBBF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1A3E260020A59D1F00FFCBBF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -110,6 +112,7 @@
 				1A3E260020A59D1F00FFCBBF /* ViewController.swift */,
 				1A69539D20A93D5E0078731D /* AppController.swift */,
 				1A69539B20A93D380078731D /* Register.swift */,
+				1A0CE79E20A994E500F3F92A /* Checkout.swift */,
 				1A0CE79C20A9944000F3F92A /* Menu.swift */,
 				1A69539920A9386D0078731D /* NumberPad.swift */,
 				1A3E260220A59D1F00FFCBBF /* Main.storyboard */,
@@ -354,6 +357,7 @@
 				1A0CE79D20A9944000F3F92A /* Menu.swift in Sources */,
 				1A3E260120A59D1F00FFCBBF /* ViewController.swift in Sources */,
 				1A69539E20A93D5E0078731D /* AppController.swift in Sources */,
+				1A0CE79F20A994E500F3F92A /* Checkout.swift in Sources */,
 				1A3E25FF20A59D1F00FFCBBF /* AppDelegate.swift in Sources */,
 				1A69539C20A93D380078731D /* Register.swift in Sources */,
 				1A69539A20A9386D0078731D /* NumberPad.swift in Sources */,
