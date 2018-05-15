@@ -16,8 +16,10 @@ class NumberPad {
         case clear
     }
     
-    var amount = BehaviorRelay<NSDecimalNumber>(value: .zero)
-    var input = PublishRelay<Command>()
+    private let amountSubject = BehaviorSubject<NSDecimalNumber>(value: .zero)
+    var amount: Observable<NSDecimalNumber> { return self.amountSubject }
+    
+    let input = PublishSubject<Command>()
     
     let disposeBag = DisposeBag()
     
@@ -39,6 +41,6 @@ class NumberPad {
             } else {
                 return value
             }
-            }.bind(to: self.amount).disposed(by: self.disposeBag)
+            }.bind(to: self.amountSubject).disposed(by: self.disposeBag)
     }
 }
