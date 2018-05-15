@@ -28,7 +28,12 @@ class Checkout {
             }
         
         self.tax = Observable.combineLatest(self.menu.taxRate, self.total).map { (taxRate, total) in
-            let handler = NSDecimalNumberHandler(roundingMode: .plain, scale: 0, raiseOnExactness: false, raiseOnOverflow: false, raiseOnUnderflow: false, raiseOnDivideByZero: false)
+            let handler = NSDecimalNumberHandler(roundingMode: .plain,
+                                                 scale: 0,
+                                                 raiseOnExactness: false,
+                                                 raiseOnOverflow: false,
+                                                 raiseOnUnderflow: false,
+                                                 raiseOnDivideByZero: false)
             return total.multiplying(by: NSDecimalNumber(string: "\(taxRate)")).dividing(by: NSDecimalNumber(string: "\(100 + taxRate)"), withBehavior: handler)
         }
     }
