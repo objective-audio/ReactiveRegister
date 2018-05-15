@@ -11,6 +11,6 @@ import RxCocoa
 
 class Menu {
     let price = BehaviorRelay<NSDecimalNumber>(value: NSDecimalNumber(string: "100"))
-    let tax = BehaviorRelay<NSDecimalNumber>(value: NSDecimalNumber(string: "8"))
+    let taxRate = BehaviorRelay<Int>(value: 8)
     let name = BehaviorRelay<String>(value: "りんご")
 }

@@ -29,8 +29,8 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         self.register.checkout.total.map { "合計 : \($0)" }.bind(to: self.totalLabel.rx.text).disposed(by: self.disposeBag)
+        self.register.checkout.tax.map { "税 : \($0)" }.bind(to: self.taxLabel.rx.text).disposed(by: self.disposeBag)
         self.register.checkout.count.map { "りんご x \($0)個" }.bind(to: self.countLabel.rx.text).disposed(by: self.disposeBag)
-        
         self.register.numberPad.amount.asObservable().map { "支払い : \($0)" }.bind(to: self.paymentLabel.rx.text).disposed(by: self.disposeBag)
         
         for idx in 0..<10 {
