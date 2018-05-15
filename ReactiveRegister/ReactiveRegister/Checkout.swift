@@ -16,8 +16,8 @@ class Checkout {
     let count = BehaviorRelay<Int>(value: 1)
     let total: Observable<NSDecimalNumber>
     let tax: Observable<NSDecimalNumber>
-    
-    private let disposeBag = DisposeBag()
+    let payment = BehaviorRelay<NSDecimalNumber>(value: .zero)
+    let change: Observable<NSDecimalNumber>
     
     init() {
         let countObservable = self.count.asObservable().map { NSDecimalNumber(string: "\($0)") }
@@ -34,6 +34,10 @@ class Checkout {
                                                  raiseOnUnderflow: false,
                                                  raiseOnDivideByZero: false)
             return total.multiplying(by: NSDecimalNumber(string: "\(taxRate)")).dividing(by: NSDecimalNumber(string: "\(100 + taxRate)"), withBehavior: handler)
+        }
+        
+        self.change = Observable.combineLatest(self.payment, self.total).map { (payment, total) in
+            return payment.subtracting(total)
         }
     }
 }
