@@ -14,7 +14,7 @@ class ViewController: UIViewController {
     @IBOutlet var numberButtons: [UIButton]!
     @IBOutlet weak var clearButton: UIButton!
     @IBOutlet weak var enterButton: UIButton!
-    @IBOutlet weak var amountLabel: UILabel!
+    @IBOutlet weak var totalLabel: UILabel!
     @IBOutlet weak var taxLabel: UILabel!
     @IBOutlet weak var countLabel: UILabel!
     @IBOutlet weak var paymentLabel: UILabel!
@@ -28,7 +28,10 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.register.numberPad.amount.asObservable().map { "入力 : \($0)" }.bind(to: self.amountLabel.rx.text).disposed(by: self.disposeBag)
+        self.register.checkout.total.map { "合計 : \($0)" }.bind(to: self.totalLabel.rx.text).disposed(by: self.disposeBag)
+        self.register.checkout.count.map { "りんご x \($0)個" }.bind(to: self.countLabel.rx.text).disposed(by: self.disposeBag)
+        
+        self.register.numberPad.amount.asObservable().map { "支払い : \($0)" }.bind(to: self.paymentLabel.rx.text).disposed(by: self.disposeBag)
         
         for idx in 0..<10 {
             self.numberButtons[idx].rx.tap.asSignal().map { NumberPad.Command.number(idx) }.emit(to: self.numberPad.input).disposed(by: self.disposeBag)
