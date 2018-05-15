@@ -37,7 +37,12 @@ class Checkout {
         }
         
         self.change = Observable.combineLatest(self.payment, self.total).map { (payment, total) in
-            return payment.subtracting(total)
+            let change = payment.subtracting(total)
+            if change.compare(NSDecimalNumber.zero) == .orderedDescending {
+                return change
+            } else {
+                return .zero
+            }
         }
     }
 }
