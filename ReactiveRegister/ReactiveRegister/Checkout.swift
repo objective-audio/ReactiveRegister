@@ -17,7 +17,7 @@ class Checkout {
     var count: Observable<Int> { return self.countRelay.asObservable() }
     let total: Observable<NSDecimalNumber>
     
-    let disposeBag = DisposeBag()
+    private let disposeBag = DisposeBag()
     
     init() {
         let countObservable = self.countRelay.map { NSDecimalNumber(string: "\($0)") }
