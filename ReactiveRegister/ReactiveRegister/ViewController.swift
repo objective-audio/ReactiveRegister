@@ -19,6 +19,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var stepper: UIStepper!
     
     let register: Register = AppController.shared.register
+    var checkout: Checkout { return  self.register.checkout }
     var numberPad: NumberPad { return self.register.numberPad }
     let disposeBag = DisposeBag()
     

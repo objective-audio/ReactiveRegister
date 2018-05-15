@@ -10,4 +10,5 @@ import Foundation
 
 class Register {
     let numberPad = NumberPad()
+    let checkout = Checkout()
 }
