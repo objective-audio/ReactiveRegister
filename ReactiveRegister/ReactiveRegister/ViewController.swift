@@ -38,6 +38,7 @@ class ViewController: UIViewController {
         self.checkout.count.map { Double($0) }.bind(to: self.stepper.rx.value).disposed(by: self.disposeBag)
         self.checkout.change.map { "お釣り : \($0) 円" }.bind(to: self.changeLabel.rx.text).disposed(by: self.disposeBag)
         self.numberPad.amount.asObservable().map { "支払い : \($0)" }.bind(to: self.paymentLabel.rx.text).disposed(by: self.disposeBag)
+        self.checkout.canEnter.bind(to: self.enterButton.rx.isEnabled).disposed(by: self.disposeBag)
         
         // View to Model
         

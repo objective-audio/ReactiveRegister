@@ -18,6 +18,7 @@ class Checkout {
     let tax: Observable<NSDecimalNumber>
     let payment = BehaviorRelay<NSDecimalNumber>(value: .zero)
     let change: Observable<NSDecimalNumber>
+    let canEnter: Observable<Bool>
     
     init() {
         let countObservable = self.count.asObservable().map { NSDecimalNumber(string: "\($0)") }
@@ -43,6 +44,10 @@ class Checkout {
             } else {
                 return .zero
             }
+        }
+        
+        self.canEnter = Observable.combineLatest(self.payment, self.total).map { (payment, total) in
+            return payment.subtracting(total).compare(NSDecimalNumber.zero) != .orderedAscending
         }
     }
 }
