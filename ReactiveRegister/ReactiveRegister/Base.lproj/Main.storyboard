@@ -129,13 +129,13 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="amountLabel" destination="Xtd-Ya-BT6" id="NP1-0z-Fwe"/>
                         <outlet property="clearButton" destination="nwD-NG-Z2Y" id="lYX-tv-bVJ"/>
                         <outlet property="countLabel" destination="18Q-ap-8Hq" id="qgN-yT-vMw"/>
                         <outlet property="enterButton" destination="PDt-b9-6jw" id="mBI-7r-xBB"/>
                         <outlet property="paymentLabel" destination="aXe-1C-n1Y" id="O9h-ml-tND"/>
                         <outlet property="stepper" destination="PY0-3k-zMt" id="h2t-SF-vqF"/>
                         <outlet property="taxLabel" destination="MnS-8K-Zdp" id="KeE-Sd-enN"/>
+                        <outlet property="totalLabel" destination="Xtd-Ya-BT6" id="NP1-0z-Fwe"/>
                         <outletCollection property="numberButtons" destination="fTT-1V-R6I" collectionClass="NSMutableArray" id="Sr4-nJ-g6S"/>
                         <outletCollection property="numberButtons" destination="LAS-mo-5SQ" collectionClass="NSMutableArray" id="GdI-SX-vgz"/>
                         <outletCollection property="numberButtons" destination="r5N-7f-qHE" collectionClass="NSMutableArray" id="sym-vI-rIi"/>
