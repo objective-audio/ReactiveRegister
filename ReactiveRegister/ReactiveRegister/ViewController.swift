@@ -32,7 +32,7 @@ class ViewController: UIViewController {
         // Model to View
         
         self.checkout.total.map { "合計 : \($0) 円" }.bind(to: self.totalLabel.rx.text).disposed(by: self.disposeBag)
-        self.checkout.tax.map { "税 : \($0) enn" }.bind(to: self.taxLabel.rx.text).disposed(by: self.disposeBag)
+        self.checkout.tax.map { "税 : \($0) 円" }.bind(to: self.taxLabel.rx.text).disposed(by: self.disposeBag)
         self.checkout.count.map { "りんご x \($0) 個" }.bind(to: self.countLabel.rx.text).disposed(by: self.disposeBag)
         self.checkout.count.map { Double($0) }.bind(to: self.stepper.rx.value).disposed(by: self.disposeBag)
         self.checkout.change.map { "お釣り : \($0) 円" }.bind(to: self.changeLabel.rx.text).disposed(by: self.disposeBag)
