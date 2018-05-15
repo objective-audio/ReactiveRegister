@@ -18,6 +18,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var taxLabel: UILabel!
     @IBOutlet weak var countLabel: UILabel!
     @IBOutlet weak var paymentLabel: UILabel!
+    @IBOutlet weak var changeLabel: UILabel!
     @IBOutlet weak var stepper: UIStepper!
     
     let register: Register = AppController.shared.register
