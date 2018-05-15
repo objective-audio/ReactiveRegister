@@ -7,8 +7,15 @@
 //
 
 import Foundation
+import RxSwift
 
 class Register {
     let numberPad = NumberPad()
     let checkout = Checkout()
+    
+    let disposeBag = DisposeBag()
+    
+    init() {
+        self.numberPad.amount.asDriver().drive(self.checkout.payment).disposed(by: self.disposeBag)
+    }
 }

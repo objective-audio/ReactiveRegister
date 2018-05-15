@@ -41,8 +41,7 @@ class NumberPad {
         }
     }
     
-    private let amountRelay = BehaviorRelay<NSDecimalNumber>(value: .zero)
-    var amount: Observable<NSDecimalNumber> { return self.amountRelay.asObservable() }
+    let amount = BehaviorRelay<NSDecimalNumber>(value: .zero)
     
     let input = PublishRelay<Command>()
     
@@ -50,6 +49,6 @@ class NumberPad {
     
     init() {
         let number = Number()
-        self.input.asObservable().map { number.input(command: $0) }.bind(to: self.amountRelay).disposed(by: self.disposeBag)
+        self.input.map { number.input(command: $0) }.bind(to: self.amount).disposed(by: self.disposeBag)
     }
 }
