@@ -15,12 +15,15 @@ class Checkout {
     
     private let countRelay = BehaviorRelay<Int>(value: 1)
     var count: Observable<Int> { return self.countRelay.asObservable() }
+    let total: Observable<NSDecimalNumber>
     
-    var total: NSDecimalNumber {
-        return self.menu.price.multiplying(by: NSDecimalNumber(string: "\(self.countRelay.value)"))
-    }
+    let disposeBag = DisposeBag()
     
-    var tax: NSDecimalNumber {
-        return .zero
+    init() {
+        let countObservable = self.countRelay.map { NSDecimalNumber(string: "\($0)") }
+        
+        self.total = Observable.combineLatest(self.menu.price, countObservable).map { (price, count) in
+            return price.multiplying(by: NSDecimalNumber(string: "\(count)"))
+            }
     }
 }

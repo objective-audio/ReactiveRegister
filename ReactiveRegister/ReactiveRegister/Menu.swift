@@ -7,9 +7,10 @@
 //
 
 import Foundation
+import RxCocoa
 
 class Menu {
-    let price = NSDecimalNumber(string: "100")
-    let tax = NSDecimalNumber(string: "8")
-    let name = "りんご"
+    let price = BehaviorRelay<NSDecimalNumber>(value: NSDecimalNumber(string: "100"))
+    let tax = BehaviorRelay<NSDecimalNumber>(value: NSDecimalNumber(string: "8"))
+    let name = BehaviorRelay<String>(value: "りんご")
 }
