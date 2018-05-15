@@ -46,7 +46,7 @@ class NumberPad {
     
     let input = PublishRelay<Command>()
     
-    let disposeBag = DisposeBag()
+    private let disposeBag = DisposeBag()
     
     init() {
         let number = Number()
