@@ -49,6 +49,11 @@ class ViewController: UIViewController {
         self.clearButton.rx.tap.asSignal().map { NumberPad.Command.clear }.emit(to: self.numberPad.input).disposed(by: self.disposeBag)
         self.delButton.rx.tap.asSignal().map { NumberPad.Command.delete }.emit(to: self.numberPad.input).disposed(by: self.disposeBag)
         self.stepper.rx.value.asDriver().map { Int($0) }.drive(self.checkout.count).disposed(by: self.disposeBag)
+        self.enterButton.rx.tap.subscribe(onNext: { [weak self] _ in
+            let actionSheet = UIAlertController(title: "お買い上げありがとうございます！", message: "", preferredStyle: .actionSheet)
+            actionSheet.addAction(UIAlertAction(title: "閉じる", style: .default, handler: { [weak self] _ in self?.register.reset() }))
+            self?.present(actionSheet, animated: true, completion: nil)
+        }).disposed(by: self.disposeBag)
     }
 }
 

@@ -18,4 +18,9 @@ class Register {
     init() {
         self.numberPad.amount.asDriver().drive(self.checkout.payment).disposed(by: self.disposeBag)
     }
+    
+    func reset() {
+        self.checkout.count.accept(1)
+        self.numberPad.input.accept(.clear)
+    }
 }
