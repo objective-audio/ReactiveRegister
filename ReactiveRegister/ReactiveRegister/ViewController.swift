@@ -46,6 +46,7 @@ class ViewController: UIViewController {
         }
         
         self.clearButton.rx.tap.asSignal().map { NumberPad.Command.clear }.emit(to: self.numberPad.input).disposed(by: self.disposeBag)
+        self.delButton.rx.tap.asSignal().map { NumberPad.Command.delete }.emit(to: self.numberPad.input).disposed(by: self.disposeBag)
         self.stepper.rx.value.asDriver().map { Int($0) }.drive(self.checkout.count).disposed(by: self.disposeBag)
     }
 }

@@ -14,6 +14,7 @@ class NumberPad {
     enum Command {
         case number(Int)
         case clear
+        case delete
     }
     
     class Number {
@@ -35,6 +36,8 @@ class NumberPad {
                 self.string = self.string + "\(number)"
             case .clear:
                 self.string = ""
+            case .delete:
+                self.string = String(self.string.dropLast())
             }
             
             return self.amount
