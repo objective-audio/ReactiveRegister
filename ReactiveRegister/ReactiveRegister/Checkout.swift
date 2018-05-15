@@ -7,13 +7,17 @@
 //
 
 import Foundation
+import RxSwift
+import RxCocoa
 
 class Checkout {
     let menu = Menu()
-    var count: Int = 1
+    
+    private let countRelay = BehaviorRelay<Int>(value: 1)
+    var count: Observable<Int> { return self.countRelay.asObservable() }
     
     var total: NSDecimalNumber {
-        return self.menu.price.multiplying(by: NSDecimalNumber(string: "\(self.count)"))
+        return self.menu.price.multiplying(by: NSDecimalNumber(string: "\(self.countRelay.value)"))
     }
     
     var tax: NSDecimalNumber {
