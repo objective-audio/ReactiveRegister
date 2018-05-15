@@ -13,15 +13,14 @@ import RxCocoa
 class Checkout {
     let menu = Menu()
     
-    private let countRelay = BehaviorRelay<Int>(value: 1)
-    var count: Observable<Int> { return self.countRelay.asObservable() }
+    let count = BehaviorRelay<Int>(value: 1)
     let total: Observable<NSDecimalNumber>
     let tax: Observable<NSDecimalNumber>
     
     private let disposeBag = DisposeBag()
     
     init() {
-        let countObservable = self.countRelay.map { NSDecimalNumber(string: "\($0)") }
+        let countObservable = self.count.asObservable().map { NSDecimalNumber(string: "\($0)") }
         
         self.total = Observable.combineLatest(self.menu.price, countObservable).map { (price, count) in
             return price.multiplying(by: NSDecimalNumber(string: "\(count)"))

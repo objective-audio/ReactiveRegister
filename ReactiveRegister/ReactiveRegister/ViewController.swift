@@ -28,16 +28,22 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // Model to View
+        
         self.register.checkout.total.map { "合計 : \($0)" }.bind(to: self.totalLabel.rx.text).disposed(by: self.disposeBag)
         self.register.checkout.tax.map { "税 : \($0)" }.bind(to: self.taxLabel.rx.text).disposed(by: self.disposeBag)
         self.register.checkout.count.map { "りんご x \($0)個" }.bind(to: self.countLabel.rx.text).disposed(by: self.disposeBag)
         self.register.numberPad.amount.asObservable().map { "支払い : \($0)" }.bind(to: self.paymentLabel.rx.text).disposed(by: self.disposeBag)
+        self.register.checkout.count.map { Double($0) }.bind(to: self.stepper.rx.value).disposed(by: self.disposeBag)
+        
+        // View to Model
         
         for idx in 0..<10 {
             self.numberButtons[idx].rx.tap.asSignal().map { NumberPad.Command.number(idx) }.emit(to: self.numberPad.input).disposed(by: self.disposeBag)
         }
         
         self.clearButton.rx.tap.asSignal().map { NumberPad.Command.clear }.emit(to: self.numberPad.input).disposed(by: self.disposeBag)
+        self.stepper.rx.value.asDriver().map { Int($0) }.drive(self.checkout.count).disposed(by: self.disposeBag)
     }
 }
 
