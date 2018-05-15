@@ -13,6 +13,7 @@ import RxCocoa
 class ViewController: UIViewController {
     @IBOutlet var numberButtons: [UIButton]!
     @IBOutlet weak var clearButton: UIButton!
+    @IBOutlet weak var delButton: UIButton!
     @IBOutlet weak var enterButton: UIButton!
     @IBOutlet weak var totalLabel: UILabel!
     @IBOutlet weak var taxLabel: UILabel!
