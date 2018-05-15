@@ -13,7 +13,7 @@ class Checkout {
     var count: Int = 1
     
     var total: NSDecimalNumber {
-        return .zero
+        return self.menu.price.multiplying(by: NSDecimalNumber(string: "\(self.count)"))
     }
     
     var tax: NSDecimalNumber {
