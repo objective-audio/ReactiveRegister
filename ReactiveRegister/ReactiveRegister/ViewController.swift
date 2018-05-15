@@ -51,7 +51,7 @@ class ViewController: UIViewController {
         self.stepper.rx.value.asDriver().map { Int($0) }.drive(self.checkout.count).disposed(by: self.disposeBag)
         self.enterButton.rx.tap.subscribe(onNext: { [weak self] _ in
             let actionSheet = UIAlertController(title: "お買い上げありがとうございます！", message: "", preferredStyle: .actionSheet)
-            actionSheet.addAction(UIAlertAction(title: "閉じる", style: .default, handler: { [weak self] _ in self?.register.resetRelay.accept(Void()) }))
+            actionSheet.addAction(UIAlertAction(title: "閉じる", style: .default, handler: { [weak self] _ in self?.register.reset.accept(Void()) }))
             self?.present(actionSheet, animated: true, completion: nil)
         }).disposed(by: self.disposeBag)
     }
