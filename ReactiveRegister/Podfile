@@ -8,6 +8,7 @@ target 'ReactiveRegister' do
   # Pods for ReactiveRegister
   pod 'RxSwift'
   pod 'RxCocoa'
+  pod 'Bond'
 
   target 'ReactiveRegisterTests' do
     inherit! :search_paths
