@@ -6,8 +6,6 @@ target 'ReactiveRegister' do
   use_frameworks!
 
   # Pods for ReactiveRegister
-  pod 'RxSwift'
-  pod 'RxCocoa'
   pod 'Bond'
 
   target 'ReactiveRegisterTests' do
