@@ -7,8 +7,8 @@
 //
 
 import Foundation
-import RxSwift
-import RxCocoa
+import Bond
+import ReactiveKit
 
 class NumberPad {
     enum Command {
@@ -44,14 +44,12 @@ class NumberPad {
         }
     }
     
-    let amount = BehaviorRelay<NSDecimalNumber>(value: .zero)
-    
-    let input = PublishRelay<Command>()
+    let amount = Observable<NSDecimalNumber>(.zero)
+    let number = Number()
     
     private let disposeBag = DisposeBag()
     
-    init() {
-        let number = Number()
-        self.input.map { number.input(command: $0) }.bind(to: self.amount).disposed(by: self.disposeBag)
+    func input(command: Command) {
+        self.amount.value = self.number.input(command: command)
     }
 }

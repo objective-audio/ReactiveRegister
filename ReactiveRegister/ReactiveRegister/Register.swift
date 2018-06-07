@@ -7,21 +7,20 @@
 //
 
 import Foundation
-import RxSwift
-import RxCocoa
+import ReactiveKit
 
 class Register {
     let numberPad = NumberPad()
     let checkout = Checkout()
     
-    let reset = PublishRelay<Void>()
-    
     let disposeBag = DisposeBag()
     
     init() {
-        self.numberPad.amount.asDriver().drive(self.checkout.payment).disposed(by: self.disposeBag)
-        
-        self.reset.asDriver(onErrorDriveWith: Driver.empty()).map { 1 }.drive(self.checkout.count).disposed(by: self.disposeBag)
-        self.reset.asSignal().map { NumberPad.Command.clear }.emit(to: self.numberPad.input ).disposed(by: self.disposeBag)
+        self.numberPad.amount.bind(to: self.checkout.payment).dispose(in: self.disposeBag)
+    }
+    
+    func reset() {
+        self.checkout.count.value = 1
+        self.numberPad.input(command: .clear)
     }
 }

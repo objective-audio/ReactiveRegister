@@ -7,8 +7,8 @@
 //
 
 import UIKit
-import RxSwift
-import RxCocoa
+import Bond
+import ReactiveKit
 
 class ViewController: UIViewController {
     @IBOutlet var numberButtons: [UIButton]!
@@ -22,9 +22,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var changeLabel: UILabel!
     @IBOutlet weak var stepper: UIStepper!
     
-    let register: Register = AppController.shared.register
-    var checkout: Checkout { return  self.register.checkout }
-    var numberPad: NumberPad { return self.register.numberPad }
+    let viewModel = ViewModel()
     let disposeBag = DisposeBag()
     
     override func viewDidLoad() {
@@ -32,28 +30,37 @@ class ViewController: UIViewController {
         
         // Model to View
         
-        self.checkout.total.map { "合計 : \($0) 円" }.bind(to: self.totalLabel.rx.text).disposed(by: self.disposeBag)
-        self.checkout.tax.map { "税 : \($0) 円" }.bind(to: self.taxLabel.rx.text).disposed(by: self.disposeBag)
-        self.checkout.count.map { "りんご x \($0) 個" }.bind(to: self.countLabel.rx.text).disposed(by: self.disposeBag)
-        self.checkout.count.map { Double($0) }.bind(to: self.stepper.rx.value).disposed(by: self.disposeBag)
-        self.checkout.change.map { "お釣り : \($0) 円" }.bind(to: self.changeLabel.rx.text).disposed(by: self.disposeBag)
-        self.numberPad.amount.asObservable().map { "支払い : \($0)" }.bind(to: self.paymentLabel.rx.text).disposed(by: self.disposeBag)
-        self.checkout.canEnter.bind(to: self.enterButton.rx.isEnabled).disposed(by: self.disposeBag)
+        self.viewModel.totalText.bind(to: self.totalLabel.reactive.text).dispose(in: self.disposeBag)
+        self.viewModel.taxText.bind(to: self.taxLabel.reactive.text).dispose(in: self.disposeBag)
+        self.viewModel.changeText.bind(to: self.changeLabel.reactive.text).dispose(in: self.disposeBag)
+        self.viewModel.paymentText.bind(to: self.paymentLabel.reactive.text).dispose(in: self.disposeBag)
+        self.viewModel.countText.bind(to: self.countLabel.reactive.text).dispose(in: self.disposeBag)
+        self.viewModel.countValue.bind(to: self.stepper.reactive.value).dispose(in: self.disposeBag)
+        self.viewModel.canEnter.bind(to: self.enterButton.reactive.isEnabled).dispose(in: self.disposeBag)
         
         // View to Model
+
+        let observeCommand = { [weak self] command -> Void in self?.viewModel.input(command: command) }
         
         for idx in 0..<10 {
-            self.numberButtons[idx].rx.tap.asSignal().map { NumberPad.Command.number(idx) }.emit(to: self.numberPad.input).disposed(by: self.disposeBag)
+            self.numberButtons[idx].reactive.tap.map { NumberPad.Command.number(idx) }.observeNext(with: observeCommand).dispose(in: self.disposeBag)
         }
         
-        self.clearButton.rx.tap.asSignal().map { NumberPad.Command.clear }.emit(to: self.numberPad.input).disposed(by: self.disposeBag)
-        self.delButton.rx.tap.asSignal().map { NumberPad.Command.delete }.emit(to: self.numberPad.input).disposed(by: self.disposeBag)
-        self.stepper.rx.value.asDriver().map { Int($0) }.drive(self.checkout.count).disposed(by: self.disposeBag)
-        self.enterButton.rx.tap.subscribe(onNext: { [weak self] _ in
+        self.clearButton.reactive.tap.map { NumberPad.Command.clear }.observeNext(with: observeCommand).dispose(in: self.disposeBag)
+        self.delButton.reactive.tap.map { NumberPad.Command.delete }.observeNext(with: observeCommand).dispose(in: self.disposeBag)
+        
+        self.stepper.reactive.value.map { Int($0) }.bind(to: self.viewModel.count).dispose(in: self.disposeBag)
+
+        self.enterButton.reactive.tap.observeNext { [weak self] _ in
+            guard let sself = self else {
+                return
+            }
             let actionSheet = UIAlertController(title: "お買い上げありがとうございます！", message: "", preferredStyle: .actionSheet)
-            actionSheet.addAction(UIAlertAction(title: "閉じる", style: .default, handler: { [weak self] _ in self?.register.reset.accept(Void()) }))
+            actionSheet.addAction(UIAlertAction(title: "閉じる", style: .default, handler: { [weak self] _ in self?.viewModel.reset() }))
+            actionSheet.popoverPresentationController?.sourceView = sself.enterButton
+            actionSheet.popoverPresentationController?.sourceRect = sself.enterButton.bounds
             self?.present(actionSheet, animated: true, completion: nil)
-        }).disposed(by: self.disposeBag)
+        }.dispose(in: self.disposeBag)
     }
 }
 

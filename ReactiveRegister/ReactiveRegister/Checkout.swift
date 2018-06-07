@@ -7,27 +7,27 @@
 //
 
 import Foundation
-import RxSwift
-import RxCocoa
+import Bond
+import ReactiveKit
 
 class Checkout {
     let menu = Menu()
     
-    let count = BehaviorRelay<Int>(value: 1)
-    let total: Observable<NSDecimalNumber>
-    let tax: Observable<NSDecimalNumber>
-    let payment = BehaviorRelay<NSDecimalNumber>(value: .zero)
-    let change: Observable<NSDecimalNumber>
-    let canEnter: Observable<Bool>
+    let count = Observable<Int>(1)
+    let total = Observable<NSDecimalNumber>(.zero)
+    let tax = Observable<NSDecimalNumber>(.zero)
+    let payment = Observable<NSDecimalNumber>(.zero)
+    let change = Observable<NSDecimalNumber>(.zero)
+    let canEnter = Observable<Bool>(false)
+    
+    let disposeBag = DisposeBag()
     
     init() {
-        let countObservable = self.count.asObservable().map { NSDecimalNumber(string: "\($0)") }
-        
-        self.total = Observable.combineLatest(self.menu.price, countObservable).map { (price, count) in
+        self.menu.price.combineLatest(with: self.count.map { NSDecimalNumber(string: "\($0)") }).map { (price, count) in
             return price.multiplying(by: NSDecimalNumber(string: "\(count)"))
-            }
+        }.bind(to: self.total).dispose(in: self.disposeBag)
         
-        self.tax = Observable.combineLatest(self.menu.taxRate, self.total).map { (taxRate, total) in
+        self.menu.taxRate.combineLatest(with: self.total).map { (taxRate: Int, total: NSDecimalNumber) -> NSDecimalNumber in
             let handler = NSDecimalNumberHandler(roundingMode: .plain,
                                                  scale: 0,
                                                  raiseOnExactness: false,
@@ -35,19 +35,19 @@ class Checkout {
                                                  raiseOnUnderflow: false,
                                                  raiseOnDivideByZero: false)
             return total.multiplying(by: NSDecimalNumber(string: "\(taxRate)")).dividing(by: NSDecimalNumber(string: "\(100 + taxRate)"), withBehavior: handler)
-        }
+        }.bind(to: self.tax).dispose(in: self.disposeBag)
         
-        self.change = Observable.combineLatest(self.payment, self.total).map { (payment, total) in
+        self.payment.combineLatest(with: self.total).map { (payment, total) -> NSDecimalNumber in
             let change = payment.subtracting(total)
             if change.compare(NSDecimalNumber.zero) == .orderedDescending {
                 return change
             } else {
                 return .zero
             }
-        }
+        }.bind(to: self.change).dispose(in: self.disposeBag)
         
-        self.canEnter = Observable.combineLatest(self.payment, self.total).map { (payment, total) in
+        self.payment.combineLatest(with: self.total).map { (payment, total) -> Bool in
             return payment.subtracting(total).compare(NSDecimalNumber.zero) != .orderedAscending
-        }
+        }.bind(to: self.canEnter).dispose(in: self.disposeBag)
     }
 }

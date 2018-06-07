@@ -7,10 +7,10 @@
 //
 
 import Foundation
-import RxCocoa
+import Bond
 
 class Menu {
-    let price = BehaviorRelay<NSDecimalNumber>(value: NSDecimalNumber(string: "100"))
-    let taxRate = BehaviorRelay<Int>(value: 8)
-    let name = BehaviorRelay<String>(value: "りんご")
+    let price = Observable<NSDecimalNumber>(NSDecimalNumber(string: "100"))
+    let taxRate = Observable<Int>(8)
+    let name = Observable<String>("りんご")
 }
